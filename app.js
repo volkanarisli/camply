@@ -14,8 +14,7 @@ var express = require("express"),
 var commentRoutes           = require("./routes/comments"),
     campgroundRoutes        = require("./routes/campgrounds"),
     indexRoutes              = require("./routes/index")
- 
- 
+
 // var url = process.env.DATABASEURL || "mongodb://localhost/yeld_camp";
 // mongoose.connect(url,{ useNewUrlParser: true });
 

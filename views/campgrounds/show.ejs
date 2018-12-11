@@ -16,8 +16,6 @@
                     <p>
                         <em>Submited By
                             <%= campground.author.username %></em>
-
-
                     </p>
                     <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
                     <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
