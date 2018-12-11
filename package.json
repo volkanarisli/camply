@@ -1,25 +1,49 @@
 {
-  "name": "v1",
+  "name": "camply",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![GitHub release](https://img.shields.io/github/release/Homebrew/brew.svg)](https://github.com/tugberkgoc/hacker-rank-tutorials/releases)\r <!--[![Travis](https://img.shields.io/travis/Homebrew/brew.svg)](https://travis-ci.org/Homebrew/brew)-->\r <!--[![Codecov](https://img.shields.io/codecov/c/github/Homebrew/brew.svg)](https://codecov.io/gh/Homebrew/brew)-->",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js"
+    "test": "mocha",
+    "esdoc": "esdoc",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
+    "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
+    "env": "0.0.2",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "method-override": "^3.0.0",
+    "moment": "^2.22.2",
     "mongoose": "^5.2.9",
     "nodemon": "^1.18.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^5.0.1"
-  }
+    "passport-local-mongoose": "^5.0.1",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "sinon": "^7.2.0"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tugberkgoc/cmpe331-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tugberkgoc/cmpe331-project/issues"
+  },
+  "homepage": "https://github.com/tugberkgoc/cmpe331-project#readme"
 }
