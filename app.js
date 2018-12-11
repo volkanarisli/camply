@@ -1,40 +1,44 @@
-var express = require("express");
-var app = express();
-var bodyParser =require("body-parser");
-var mongoose = require("mongoose");
-
+var express = require("express"),
+    app = express(),
+    bodyParser =require("body-parser"),
+    mongoose = require("mongoose"),
+    passport = require("passport"),
+    LocalStrategy = require("passport-local"),
+    Campground = require("./models/campground"),
+    Comment    = require("./models/comment"),
+    User       = require("./models/user"),
+    seedDB     = require("./seeds");
+    
+ 
 mongoose.connect("mongodb://localhost/yeld_camp");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs")
+app.use(express.static(__dirname+"/public")); 
+   
+   
+   seedDB(); 
+   
+   
 
-//SCHEMA SETUP
-var campgroundShcema = new mongoose.Schema({
-   name: String,
-   image: String,
-   description:String
+//PASSPORT CONFIG
+app.use(require("express-session")({
+    secret: "Once again rusty is the cutest dog",
+    resave: false,
+    saveUninitialized: false
+    
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use(function(req,res,next){
+    res.locals.currentUser = req.user;
+    next();
 });
 
-var Campground = mongoose.model("Campground",campgroundShcema);
-
-/**Campground.create({name:"Salmon Greek", image:"https://cdn.pixabay.com/photo/2015/03/26/10/46/volcanoes-691939_1280.jpg",description:"This is a huge granthill,no bathrooms"},function (err,campground) {
-                      if (err) {
-                          console.log("err")
-                      }else{
-                          console.log("NEWLY CREATED CAMPGROUND");
-                          console.log(campground);
-                      }
-                  });**/
-var campgrounds = [
-        
-        {name:"Salmon Greek", image:"https://pixabay.com/get/e83db7082af3043ed1584d05fb1d4e97e07ee3d21cac104496f4c67ba5eab4bc_340.jpg"},
-        {name:"Grantine Hill", image:"https://pixabay.com/get/ef3cb00b2af01c22d2524518b7444795ea76e5d004b0144291f7c37ba0ecb1_340.jpg"},
-        {name:"Mountain Goats Sites", image:"https://farm4.staticflickr.com/3246/2984979490_bcd60959de.jpg"},
-        {name:"Mountain Goats Sites", image:"https://farm4.staticflickr.com/3246/2984979490_bcd60959de.jpg"},
-        {name:"Mountain Goats Sites", image:"https://farm4.staticflickr.com/3246/2984979490_bcd60959de.jpg"},
-        {name:"Mountain Goats Sites", image:"https://farm4.staticflickr.com/3246/2984979490_bcd60959de.jpg"},
-        {name:"Mountain Goats Sites", image:"https://farm4.staticflickr.com/3246/2984979490_bcd60959de.jpg"},
-        ];
 
 app.get("/",function (req,res) {
 res.render("landing");
@@ -43,18 +47,21 @@ res.render("landing");
 
 
 app.get("/campgrounds",function (req,res) {
+      
+    
+    
     
         Campground.find({},function(err,allCampgrounds) {
             if (err) {
-                console.log(err)
+                console.log(err);
             } else {
-                res.render("index",{campgrounds:allCampgrounds})
+                res.render("campgrounds/index",{campgrounds:allCampgrounds});
             }
         });
 });
 
 app.get("/campgrounds/new",function(req, res) {
-   res.render("new.ejs"); 
+   res.render("campgrounds/new"); 
 });
 app.post("/campgrounds",function(req,res) {
  var name = req.body.name;
@@ -71,17 +78,101 @@ app.post("/campgrounds",function(req,res) {
  });
  
  });
- 
+ //Show route
  app.get("/campgrounds/:id",function(req, res) {
-    Campground.findById( req.params.id,function (err,foundCampground) {
+    Campground.findById( req.params.id).populate("comments").exec(function (err,foundCampground) {
        if (err) {
-           console.log(err)
+           console.log(err);
        } else {
-           res.render("show",{campground:foundCampground});
+           res.render("campgrounds/show",{campground:foundCampground});
        }
     });
      
- })
+ });
+
+//===========================
+//COMMNETS ROUTES
+//===========================
+
+app.get("/campgrounds/:id/comments/new",isLoggedIn,function(req, res) {
+   //find campground by id
+   Campground.findById(req.params.id,function (err,campground) {
+       if (err) {
+           console.log(err)
+       } else {
+             res.render("comments/new",{campground:campground});
+       }
+   })
+  
+});
+
+app.post("/campgrounds/:id/comments",isLoggedIn,function (req,res) {
+   Campground.findById(req.params.id,function(err, campground) {
+       if (err) {
+           console.log(err);
+           res.redirect("/campgrounds");
+       } else {
+           Comment.create(req.body.comment,function (err,comment) {
+               if (err) {
+                   console.log(err);
+               } else {
+                   campground.comments.push(comment);
+                   campground.save();
+                   res.redirect("/campgrounds/"+ campground._id);
+               }
+           });
+       }
+   });
+});
+//============
+//AUTH ROUTES
+//============
+//SHOW REGISTER FORM
+
+app.get("/register",function(req, res) {
+   res.render("register"); 
+});
+//handle sign up logic
+app.post("/register",function(req, res) {
+   var newUser = new User({username : req.body.username});
+    User.register(newUser,req.body.password,function (err,user) {
+        if (err) {
+            console.log(err);
+            return res.render("register");
+        } else {
+            passport.authenticate("local")(req,res,function(){
+               res.redirect("/campgrounds");
+            });
+        }
+    });
+});
+//show login form
+
+app.get("/login",function(req, res) {
+    res.render("login");
+});
+//login logic
+app.post("/login",passport.authenticate("local",
+        {
+            successRedirect:"/campgrounds" ,
+            failueRedirect: "/login"
+            
+        }),function(req, res) {
+    
+});
+//logout route
+app.get("/logout",function(req, res) {
+    req.logout();
+    res.redirect("/campgrounds");
+});
+
+
+function isLoggedIn(req,res,next) {
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+};
 
 app.listen(process.env.PORT,process.env.IP,function () {
     console.log("The YeldCamp Server Has Started");
