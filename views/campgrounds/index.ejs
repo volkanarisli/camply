@@ -5,13 +5,13 @@
 
    <div class="container">
 
-<header class="jumbotron">
+<header class="jumbotron animated zoomIn">
 
     <div class="container">
 
-        <h1>Welcome to the YelpCamp!</h1>
+        <h1 style="color:black;">Welcome to the <span id="logo" style="font-family:'Pacifico', cursive; ">Camply<i class="fas fa-campground"></i></span> </h1>
 
-        <p>Pick up your dream campsite</p>
+        <p style="color:#ffffff">Pick up your dream campsite</p>
 
         <a class="btn btn-primary btn-large" href="/campgrounds/new">Create new campsite</a>
 
@@ -23,9 +23,9 @@
 
         <%campgrounds.forEach(function(camp){ %>
 
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6  animated flipInX">
 
-                <div class="thumbnail">
+                <div class="thumbnail campcontainer">
 
                     <img src="<%=camp.image%>">
 

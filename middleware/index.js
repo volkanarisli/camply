@@ -1,4 +1,5 @@
 var Campground = require("../models/campground");
+var user = require("../models/user");
 var Comment = require("../models/comment");
 
 // all the middleare goes here
@@ -12,7 +13,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next) {
                res.redirect("back");
            }  else {
                // does user own the campground?
-            if(foundCampground.author.id.equals(req.user._id)) {
+            if(foundCampground.author.id.equals(req.user._id)||req.user.username == "admin") {
                 next();
             } else {
                 req.flash( "error","You don't have permisson to do that");
@@ -33,7 +34,7 @@ middlewareObj.checkCommentOwnership = function(req, res, next) {
                res.redirect("back");
            }  else {
                // does user own the comment?
-            if(foundComment.author.id.equals(req.user._id)) {
+            if(foundComment.author.id.equals(req.user._id)||req.user.username == "admin") {
                 next();
             } else {
                 req.flash( "error","You don't have permission to do that");

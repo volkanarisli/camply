@@ -1,14 +1,20 @@
 <% include ./partials/header %>
 
-<h1>Login</h1>
-
-
-
-<form action="/login" method="POST">
-    <input type="text" name="username" placeholder="username" >
-    <input type="password" name="password" placeholder="password" >
-    <input type="submit" value="Login!" >
-    
-</form>
+<div class="vid-container">
+    <video class="bgvid" autoplay="autoplay" src="media/loginbackground.mp4" muted preload="auto" loop></video>
+    <div class="inner-container">
+        <div class="box animated jackInTheBox">
+            <form action="/login" method="POST">
+            <h1>LOGIN NOW</h1>
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button>LOGIN</button>
+            </form>
+            <p>
+                Not a member ? <span><a href="/register">Sign up</a></span>
+            </p>
+        </div>
+    </div>
+</div>
 
 <% include ./partials/footer %>

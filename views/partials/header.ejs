@@ -1,40 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>YelpCamp</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/stylesheets/main.css">
-    </head>
-    <body>
+
+<head>
+    <title>Camply </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+
+    
+    <link rel="icon" 
+      type="image/png" 
+      href="http://freevector.co/wp-content/uploads/2011/08/75741-indian-tent.png">
+</head>
+
+<body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">YelpCamp</a>
+                <a class="navbar-brand" href="/" style="font-family:'Pacifico', cursive; color: black; "> Camply<i
+                        class="fas fa-campground"></i></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <% if(!currentUser){ %>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Sign Up</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Sign Up</a></li>
                     <% } else { %>
-                        <li><a href="#">Signed In As <%= currentUser.username %></a></li>
-                        <li><a href="/logout">Logout</a></li>
+                    <li><a href="#">Signed In As
+                            <%= currentUser.username %></a></li>
+                    <li><a href="/logout">Logout</a></li>
                     <% } %>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container" >
-    <% if(error && error.length>0){ %>
-    <div class="alert alert-danger" role="alert" >
-        
-        <%= error %>
-    </div>
-     <% } %>
-     <% if(success && success.length>0){ %> 
-    <div class="alert alert-success" role="alert" >
-        
-        <%=success %>
-    </div>
-    <% } %>
+    <div class="container">
+        <% if(error && error.length>0){ %>
+        <div class="alert alert-danger" role="alert">
+
+            <%= error %>
+        </div>
+        <% } %>
+        <% if(success && success.length>0){ %>
+        <div class="alert alert-success" role="alert">
+
+            <%=success %>
+        </div>
+        <% } %>
     </div>

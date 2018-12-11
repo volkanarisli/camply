@@ -14,12 +14,11 @@ var express = require("express"),
 var commentRoutes           = require("./routes/comments"),
     campgroundRoutes        = require("./routes/campgrounds"),
     indexRoutes              = require("./routes/index")
- 
- 
-var url = process.env.DATABASEURL || "mongodb://localhost/yeld_camp";
-mongoose.connect(url,{ useNewUrlParser: true });
 
-//mongoose.connect("mongodb://volkan:volk0198@ds251332.mlab.com:51332/yeldcamp",{ useNewUrlParser: true });
+// var url = process.env.DATABASEURL || "mongodb://localhost/yeld_camp";
+// mongoose.connect(url,{ useNewUrlParser: true });
+
+mongoose.connect("mongodb://volkan:volk0198@ds251332.mlab.com:51332/yeldcamp",{ useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs")
@@ -61,6 +60,6 @@ app.use("/",indexRoutes);
 
 
 
-app.listen(process.env.PORT,process.env.IP,function () {
-    console.log("The YeldCamp Server Has Started");
+app.listen(process.env.PORT||8000,function () {
+    console.log("The Camply Server Has Started");
 });

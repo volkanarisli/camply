@@ -1,6 +1,7 @@
 var express = require("express");
 var router  = express.Router();
 var Campground = require("../models/campground");
+var user = require("../models/user");
 var middleware = require("../middleware");
 
 
@@ -52,9 +53,18 @@ router.get("/:id", function(req, res){
         if(err){
             console.log(err);
         } else {
+           if(req.isAuthenticated()){
             console.log(foundCampground)
+            var usernameofUser =req.user.username;
+            console.log(usernameofUser);
             //render show template with that campground
-            res.render("campgrounds/show", {campground: foundCampground});
+            res.render("campgrounds/show", {campground: foundCampground,usernameofUser,usernameofUser});
+           }else{
+            console.log(foundCampground)
+            
+            //render show template with that campground
+            res.render("campgrounds/show", {campground: foundCampground,usernameofUser,usernameofUser});
+           }
         }
     });
 });

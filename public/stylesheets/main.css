@@ -12,4 +12,111 @@
 
 .delete-form{
     display: inline;
+  
+}
+
+.jumbotron{
+    background: url("https://images.pexels.com/photos/4827/nature-forest-trees-fog.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260") center center / cover no-repeat;
+   
+}
+
+.campcontainer:hover{
+    transform: scale(1.1);
+}
+
+.vid-container{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bgvid{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100vw;
+
+}
+
+.inner-container{
+    width: 400px;
+    height: 460px;
+    position: absolute;
+    top: calc(46vh - 200px);
+    left:calc(70vw - 200px) ;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.61);
+
+}
+
+.box{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: tahoma;
+    color: white;
+    background: rgba(0, 0, 0, 0.13);
+    padding: 30px 0px;
+
+
+}
+
+.box h1{
+    text-align: center;
+    margin: 30px 0;
+    font-size: 30px;
+    font-family: tahoma;
+
+}
+
+.box input{
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-size: 12px;
+    font-family: tahoma;
+
+}
+
+.box input:focus,
+.box input:active,
+.box button:focus,
+.box button{
+    outline: none;
+}
+.box button{
+    background: orange;
+    border: 0;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    width: 150px;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family: tahoma;
+
+}
+
+.box p{
+    font-size: 14px;
+    text-align:center;
+
+}
+
+.box p span{
+    cursor: pointer;
+    color: white;
+}
+
+@media only screen and (max-width: 991px) {
+    #logo {
+        color: rgb(255, 255, 255);
+    }
 }
