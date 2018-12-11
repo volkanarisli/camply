@@ -1,11 +1,11 @@
 const assert = require('assert')
-const MembershipApplication = require("../models/campground-application")
+const campgroundValidation = require("./models/campground-validation")
 
 describe("Applying for mission", () => {
   var validApp
 
   before(() => {
-    validApp = new MembershipApplication({
+    validApp = new campgroundValidation({
       price: 30,
       image: "google.com/imageurl",
       description: 'this is a description about camp',
@@ -38,24 +38,3 @@ describe("Applying for mission", () => {
     })
   })
 })
-
-/*
-
-name: String,
-  price: String,
-  image: String,
-  description: String,
-  author: {
-    id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User"
-    },
-    username: String
-  },
-  comments: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Comment"
-    }
-  ]
- */

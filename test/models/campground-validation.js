@@ -1,6 +1,6 @@
 var _ = require('underscore')._
 
-var CampgroundApplication = function(args) {
+var CampgroundValidation = function(args) {
 
   _.extend(this,args)
 
@@ -33,25 +33,4 @@ var CampgroundApplication = function(args) {
   }
 }
 
-module.exports = CampgroundApplication
-
-/*
-
-name: String,
-  price: String,
-  image: String,
-  description: String,
-  author: {
-    id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User"
-    },
-    username: String
-  },
-  comments: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Comment"
-    }
-  ]
- */
+module.exports = CampgroundValidation
