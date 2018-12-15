@@ -1,0 +1,382 @@
+\hypertarget{namespacetag}{}\section{tag Namespace Reference}
+\label{namespacetag}\index{tag@{tag}}
+
+
+\subsection{Detailed Description}
+(\href{https://github.com/esdoc/esdoc/pull/486}{\tt \#486}). Thanks \href{https://github.com/bmaupin}{\tt }
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Crash if {\ttfamily config.\+index} file was not found (\href{https://github.com/esdoc/esdoc/pull/490}{\tt \#490}). Thanks \href{https://github.com/22a}{\tt @22a}
+\end{DoxyItemize}
+\item {\bfseries Chore}
+\begin{DoxyItemize}
+\item Update {\ttfamily marked}. (\href{https://github.com/esdoc/esdoc/pull/503}{\tt \#503}) Thanks \href{https://github.com/jan-molak}{\tt -\/molak}
+\item Update some packages.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{1.\+0.\+4 (2017-\/11-\/12)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Fix `import \{ type foo \} from './\+Bar\textquotesingle{}\`{} (flowtype syntax). (\href{https://github.com/esdoc/esdoc/pull/464}{\tt \#464}) Thanks \href{https://github.com/mprobber}{\tt }
+\item Fix decorate that has object literal arguments. (\href{https://github.com/esdoc/esdoc/pull/472}{\tt \#472}) Thanks \href{https://github.com/mysim1}{\tt }
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{1.\+0.\+3 (2017-\/09-\/20)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Broken if using {\ttfamily @foo.\+bar} decorator. (\href{https://github.com/esdoc/esdoc/issues/439}{\tt \#439})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{1.\+0.\+2 (2017-\/09-\/03)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Broken if code block has {\ttfamily @}. (\href{https://github.com/esdoc/esdoc/pull/436}{\tt \#436}) Thanks \href{https://github.com/pzuraq}{\tt }
+\item Broken if anonymous default export is exist. (\href{https://github.com/esdoc/esdoc/issues/431}{\tt \#431}) Thanks \href{https://github.com/zemzheng}{\tt }
+\item Broken if expression extends is exist. (\href{https://github.com/esdoc/esdoc/pull/409}{\tt \#409}) Thanks \href{https://github.com/dimitryvolkov}{\tt }
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{1.\+0.\+1 (2017-\/07-\/30)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Breaking}
+\begin{DoxyItemize}
+\item Some features were carved out to plugins
+\begin{DoxyItemize}
+\item \href{https://esdoc.org/manual/migration.html}{\tt Migration to v1.\+0}
+\item \href{https://esdoc.org/v0.5/index.html}{\tt v0.\+5 documentation}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\bfseries Feat}
+\begin{DoxyItemize}
+\item \href{https://github.com/esdoc/esdoc-plugins/tree/master/esdoc-publish-markdown-plugin}{\tt esdoc-\/publish-\/markdown-\/plugin} PoC
+\item \href{https://github.com/esdoc/esdoc-plugins/tree/master/esdoc-flow-type-plugin}{\tt esdoc-\/flow-\/type-\/plugin} PoC
+\item \href{https://github.com/esdoc/esdoc-plugins/tree/master/esdoc-typescript-plugin}{\tt esdoc-\/typescript-\/plugin} PoC
+\item \href{https://github.com/esdoc/esdoc-plugins/tree/master/esdoc-react-plugin}{\tt esdoc-\/react-\/plugin} PoC
+\item \href{https://github.com/esdoc/esdoc-plugins/tree/master/esdoc-jsx-plugin}{\tt esdoc-\/jsx-\/plugin}
+\end{DoxyItemize}
+\item {\bfseries Note}
+\begin{DoxyItemize}
+\item {\ttfamily v1.\+0.\+0} can not use. Because {\ttfamily v1.\+0.\+0} had been used in past.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+5.\+2 (2017-\/01-\/02)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Display error message when invalid function type (\href{https://github.com/esdoc/esdoc/issues/351}{\tt \#351}) Thanks \href{https://github.com/LukasHechenberger}{\tt }
+\item Crash when destructure sparse array (\href{https://github.com/esdoc/esdoc/issues/350}{\tt \#350})
+\item Crash when guess type of array detructuring (\href{https://github.com/esdoc/esdoc/issues/301}{\tt \#301})
+\item A union type in a generics type (\href{https://github.com/esdoc/esdoc/commit/eb051e729b83bca552a3d4b43351dc1272ee4154}{\tt eb051e7})
+\item A union type with a spread type (\href{https://github.com/esdoc/esdoc/commit/199d834cfe68ba986212b51cb59ea2d9de55ba1c}{\tt 199d834})
+\item Crash when function was assigned by member expression (\href{https://github.com/esdoc/esdoc/commit/e59820aed2f3e2091f32d35de34925d0132630e0}{\tt e59820a})
+\item Broken to guess type when property has null value or object expression using string key (\href{https://github.com/esdoc/esdoc/commit/5920c1f91633202ec795f360bb0ac12f68f258f2}{\tt 5920c1f})
+\item Crash when guess type of return value that has object spread (\href{https://github.com/esdoc/esdoc/pull/364}{\tt \#364}) Thanks \href{https://github.com/vovkasm}{\tt vovkasm}
+\end{DoxyItemize}
+\item {\bfseries Feat}
+\begin{DoxyItemize}
+\item Automatically take a super class description if the method override a super class method. (\href{https://github.com/esdoc/esdoc/commit/7b515f0367a386ceb732b4606b96abf24bfab627}{\tt 7b515f0})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+5.\+1 (2016-\/12-\/26)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Fix a message when could not parse the codes (\href{https://github.com/esdoc/esdoc/commit/a98a83c2cdb2904e2f8a246dee8cf886da47fc48}{\tt a98a83c})
+\item Fix a help message (\href{https://github.com/esdoc/esdoc/commit/a16e2c121989d7a294d2cf2b6c2b1d1ec32f4277}{\tt a16e2c1})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+5.\+0 (2016-\/12-\/25)}
+
+E\+S\+Doc logo was out!
+
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries Breaking}
+\begin{DoxyItemize}
+\item Require node v6 or later (\href{https://github.com/esdoc/esdoc/commit/a5b37bd0c68304214185f765f617b1077bee81b7}{\tt a5b37bd})
+\item Switch the ES parser to babylon from espree (\href{https://github.com/esdoc/esdoc/commit/8130a3f42b497e81f9ec6fc4cf0ef07ed5a7fa22}{\tt 8130a3f})
+\begin{DoxyItemize}
+\item {\ttfamily on\+Handle\+A\+ST} in plugin is breaking
+\end{DoxyItemize}
+\item Remove {\ttfamily config.\+import\+Path\+Prefix} (\href{https://github.com/esdoc/esdoc/commit/a665c5d8c2c2a58cbe108ab3ecc8afc346c80ccf}{\tt a665c5d})
+\begin{DoxyItemize}
+\item Use \href{https://github.com/esdoc/esdoc-importpath-plugin}{\tt E\+S\+Doc Import Path Plugin} instead of it
+\end{DoxyItemize}
+\item Remove {\ttfamily badge tag} in R\+E\+A\+D\+ME (\href{https://github.com/esdoc/esdoc/commit/6869b06e293c2471978ef96882baef6cc14c1766}{\tt 6869b06})
+\begin{DoxyItemize}
+\item Use badge of \href{https://doc.esdoc.org}{\tt E\+S\+Doc Hosting Service}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\bfseries Feature\+: E\+S2015}
+\begin{DoxyItemize}
+\item Support {\ttfamily arrow function} (\href{https://github.com/esdoc/esdoc/commit/964eda3d4e2da6e5d92b3a6502a4b2d01422b692}{\tt 964eda3})
+\end{DoxyItemize}
+\item {\bfseries Feature\+: E\+S2016}
+\begin{DoxyItemize}
+\item Support {\ttfamily exponentiation operator} (\href{https://github.com/esdoc/esdoc/commit/29f6ccced4256016fed4ac8eb5b98320cd78c4d7}{\tt 29f6ccc})
+\end{DoxyItemize}
+\item {\bfseries Feature\+: E\+S2017}
+\begin{DoxyItemize}
+\item Support {\ttfamily async function} (\href{https://github.com/esdoc/esdoc/commit/50452a1e44a1c8908da1fb377d3aa51eba220256}{\tt 50452a1})
+\item Support {\ttfamily trailing comma} (\href{https://github.com/esdoc/esdoc/commit/dc9ba0fd904adbc1519f27c15fab104f1a4414a5}{\tt dc9ba0f})
+\end{DoxyItemize}
+\item {\bfseries Feature\+: E\+C\+M\+A\+Script Proposal} (see \href{https://esdoc.org/manual/usage/feature.html#ecmascript-proposal}{\tt here})
+\begin{DoxyItemize}
+\item Support {\ttfamily class properties} (\href{https://github.com/esdoc/esdoc/commit/c7b4d9b415812cf18c451b1a452c9725593d3891}{\tt c7b4d9b})
+\item Support {\ttfamily object rest spread} (\href{https://github.com/esdoc/esdoc/commit/b58aa054620e7335d7dcf8e0c81d4cb221e1fc6e}{\tt b58aa05})
+\item Support {\ttfamily do expressions} (\href{https://github.com/esdoc/esdoc/commit/33daf5a89dcdd3cd72a3d8b74829861f2c08e18e}{\tt 33daf5a})
+\item Support {\ttfamily function bind} (\href{https://github.com/esdoc/esdoc/commit/5b7a7d06028e432d1e23b43963905c1a76b102b2}{\tt 5b7a7d0})
+\item Support {\ttfamily function sent} (\href{https://github.com/esdoc/esdoc/commit/fe8a2656a93cfae51c0a541f291f3f32330aec3b}{\tt fe8a265})
+\item Support {\ttfamily async generators} (\href{https://github.com/esdoc/esdoc/commit/e6dc2f2cd00bff0e24f71a7485baedb79949ee94}{\tt e6dc2f2})
+\item Support {\ttfamily decorators} (\href{https://github.com/esdoc/esdoc/commit/c9419512b7dda5e8f0b906945fb2a91f0b4621b3}{\tt c941951})
+\item Support {\ttfamily export extensions} (parsing syntax only) (\href{https://github.com/esdoc/esdoc/commit/8803005b5927615027939ed42633bb06d060adaa}{\tt 8803005})
+\item Support {\ttfamily dynamic import} (\href{https://github.com/esdoc/esdoc/commit/d729f5f4e6ad7d7693888b43ab5d42cb78bc15dd}{\tt d729f5f})
+\end{DoxyItemize}
+\item {\bfseries Feature\+: Manual} (see \href{https://esdoc.org/manual/usage/feature.html#integration-manual}{\tt here})
+\begin{DoxyItemize}
+\item Support new sections({\ttfamily advanced} and {\ttfamily design}) to manual (\href{https://github.com/esdoc/esdoc/commit/2ebb2c60e9141b4b562c0a684c21e7cfdfc94857}{\tt 2ebb2c6})
+\item Improve new manual index page (\href{https://github.com/esdoc/esdoc/commit/0d30880e58264f3bc0069246df4a6a3e6058a69b}{\tt 0d30880})
+\item Use manual as global index (\href{https://github.com/esdoc/esdoc/commit/a887852316c2c29ea377ed67d9415bf11dc1b630}{\tt a887852})
+\end{DoxyItemize}
+\item {\bfseries Feature\+: Config}
+\begin{DoxyItemize}
+\item Support automatically finding config (\href{https://github.com/esdoc/esdoc/commit/08fa2bc296b552168f86538561174e010a3a2f14}{\tt 08fa2bc})
+\begin{DoxyItemize}
+\item {\ttfamily .esdoc.\+json} in current directory
+\item {\ttfamily .esdoc.\+js} in current directory
+\item {\ttfamily esdoc} property in {\ttfamily package.\+json}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\bfseries Internal}
+\begin{DoxyItemize}
+\item Update to babel6 (\href{https://github.com/esdoc/esdoc/commit/149914e84cb3bb061f2bdf2e43af00178b131a9e}{\tt 149914e})
+\item Refactor test codes (\href{https://github.com/esdoc/esdoc/pull/324}{\tt \#324})
+\item Remove internal private tags (\href{https://github.com/esdoc/esdoc/pull/325}{\tt \#325})
+\item Use E\+S\+Lint (\href{https://github.com/esdoc/esdoc/pull/326}{\tt \#326})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+8 (2016-\/08-\/07)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Feat}
+\begin{DoxyItemize}
+\item Through more info to plugins (\href{https://github.com/esdoc/esdoc/pull/263}{\tt \#263}) Thanks \href{https://github.com/typhonrt}{\tt }
+\end{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Not work {\ttfamily @link} at property description (\href{https://github.com/esdoc/esdoc/issues/246}{\tt \#246})
+\item Crash when function name includes member expression (\href{https://github.com/esdoc/esdoc/issues/297}{\tt \#297})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+7 (2016-\/05-\/02)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Broken if identifier name is stared with {\ttfamily B} (\href{https://github.com/esdoc/esdoc/issues/224}{\tt \#224})
+\item Broken dependency package
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+6 (2016-\/03-\/06)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Crash when the manual has H\+T\+ML comments (\href{https://github.com/esdoc/esdoc/issues/231}{\tt \#231}, \href{https://github.com/esdoc/esdoc/pull/239}{\tt \#239}) Thanks \href{https://github.com/staltz}{\tt }
+\item Broken output when repository url is {\ttfamily git+https\+://} style (\href{https://github.com/esdoc/esdoc/issues/235}{\tt \#235}, \href{https://github.com/esdoc/esdoc/pull/236}{\tt \#236}) Thanks \href{https://github.com/jamsyoung}{\tt }
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+5 (2016-\/02-\/14)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Make a mistake lint for array destructuring (\href{https://github.com/esdoc/esdoc/issues/178}{\tt \#178})
+\item Comment syntax(white space) is too strict (\href{https://github.com/esdoc/esdoc/issues/181}{\tt \#181})
+\item Broken param parsed result if description has {\ttfamily \{\}} (\href{https://github.com/esdoc/esdoc/issues/185}{\tt \#185})
+\item Link does not work when identifier name has {\ttfamily \$} (\href{https://github.com/esdoc/esdoc/issues/218}{\tt \#218})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+4 (2016-\/02-\/06)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Feat}
+\begin{DoxyItemize}
+\item Can resolve import file path that has no file extension (\href{https://github.com/esdoc/esdoc/issues/160}{\tt \#160})
+\item {\ttfamily on\+Handle\+H\+T\+ML} has the target filename (\href{https://github.com/esdoc/esdoc/pull/175}{\tt \#175}) Thanks \href{https://github.com/skratchdot}{\tt }
+\end{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Breaking document if comment has tab (\href{https://github.com/esdoc/esdoc/issues/127}{\tt \#127}) Thanks \href{https://github.com/developit}{\tt }
+\item Crash indirect instance export (\href{https://github.com/esdoc/esdoc/issues/166}{\tt \#166}) Thanks \href{https://github.com/kogai}{\tt }
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+3 (2015-\/11-\/02)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Lock npm modules
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+2 (2015-\/11-\/01)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Crash when not initialized declaration (\href{https://github.com/esdoc/esdoc/issues/126}{\tt \#126})
+\item Crash when {\ttfamily @param} description has {\ttfamily \{@link foo\}} (\href{https://github.com/esdoc/esdoc/issues/129}{\tt \#129})
+\item Allow particular H\+T\+ML tags in each descriptions (\href{https://github.com/esdoc/esdoc/issues/130}{\tt \#130})
+\item Crash when record + union type is exists (\href{https://github.com/esdoc/esdoc/issues/152}{\tt \#152})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+1 (2015-\/10-\/18)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Breaking}
+\begin{DoxyItemize}
+\item Support multi files in manual (\href{https://github.com/esdoc/esdoc/issues/124}{\tt \#124})
+\end{DoxyItemize}
+\item {\bfseries Feat}
+\begin{DoxyItemize}
+\item Support tutorial and configuration in manual (\href{https://github.com/esdoc/esdoc/issues/122}{\tt \#122})
+\item Support image in manual (\href{https://github.com/esdoc/esdoc/issues/123}{\tt \#123})
+\end{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Crash if method is generator + computed + member-\/expression (\href{https://github.com/esdoc/esdoc/issues/107}{\tt \#107})
+\item Not resolved {\ttfamily @link} in summary (\href{https://github.com/esdoc/esdoc/issues/110}{\tt \#110})
+\item Invalid param name when description has {\ttfamily @link} (\href{https://github.com/esdoc/esdoc/issues/119}{\tt \#119})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+4.\+0 (2015-\/10-\/04)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Feat}
+\begin{DoxyItemize}
+\item Support manual(overview, installation, usage, etc) into documentation (\href{https://github.com/esdoc/esdoc/issues/102}{\tt \#102})
+\item Support documentation lint (\href{https://github.com/esdoc/esdoc/issues/103}{\tt \#103})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+3.\+1 (2015-\/09-\/27)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Multi-\/line description truncated in summary (\href{https://github.com/esdoc/esdoc/issues/85}{\tt \#85})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+3.\+0 (2015-\/09-\/21)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Breaking}
+\begin{DoxyItemize}
+\item Change side bar navigation style (\href{https://github.com/esdoc/esdoc/issues/84}{\tt \#84})
+\end{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Inner link in user markdown (\href{https://github.com/esdoc/esdoc/issues/80}{\tt \#80})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+2.\+6 (2015-\/09-\/13)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Crash when array destructuring is exist (\href{https://github.com/esdoc/esdoc/pull/77}{\tt \#77} Thanks , \href{https://github.com/esdoc/esdoc/issues/76}{\tt \#76})
+\item Crash when computed property method is exist (\href{https://github.com/esdoc/esdoc/pull/78}{\tt \#78} Thanks , \href{https://github.com/esdoc/esdoc/issues/73}{\tt \#73})
+\item Crash when loading config without .js and .json (\href{https://github.com/esdoc/esdoc/issues/74}{\tt \#74})
+\item Crash when unknown class new expression variable is exist (\href{https://github.com/esdoc/esdoc/issues/75}{\tt \#75})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+2.\+5 (2015-\/09-\/06)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Feat}
+\begin{DoxyItemize}
+\item Support Java\+Script code as esdoc config (\href{https://github.com/esdoc/esdoc/pull/71}{\tt \#71} Thanks )
+\item Add {\ttfamily config.\+include\+Source} (\href{https://github.com/esdoc/esdoc/issues/67}{\tt \#67}, \href{https://github.com/esdoc/esdoc/issues/68}{\tt \#68})
+\begin{DoxyItemize}
+\item If you do not want to include source code into documentation, set {\ttfamily config.\+include\+Source\+: false}
+\end{DoxyItemize}
+\item Display undocument lines in source file (\href{https://github.com/esdoc/esdoc/issues/61}{\tt \#61})
+\end{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Excludes member that has same name getter/setter/method (\href{https://github.com/esdoc/esdoc/issues/64}{\tt \#64}, \href{https://github.com/esdoc/esdoc/issues/70}{\tt \#70})
+\item Crash when destructuring is exist at top (\href{https://github.com/esdoc/esdoc/issues/65}{\tt \#65})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+2.\+4 (2015-\/08-\/30)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Crash if un-\/initialized let/const variables are exist (\href{https://github.com/esdoc/esdoc/issues/60}{\tt \#60})
+\item Invalid documentation when computed members({\ttfamily this\mbox{[}prop\mbox{]} = 123}) are exist (\href{https://github.com/esdoc/esdoc/issues/59}{\tt \#59})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsubsection*{0.\+2.\+3 (2015-\/08-\/29)}
+
+
+\begin{DoxyItemize}
+\item {\bfseries Fix}
+\begin{DoxyItemize}
+\item Fail if config.\+source is {\ttfamily ./} (\href{https://github.com/esdoc/esdoc/issues/56}{\tt \#56})
+\item Not match {\ttfamily includes, excludes} in config (\href{https://github.com/esdoc/esdoc/issues/57}{\tt \#57})
+\item Not process {\ttfamily @param} in \`{}\`{} 
+\end{DoxyItemize}
+\end{DoxyItemize}
