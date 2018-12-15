@@ -34,6 +34,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Volkan Arisli** - *Initial work* - [GitHub Profile](https://github.com/volkanarisli)
 * **Hanifi Enes Gul** - *Documentation* - [GitHub Profile](https://github.com/r0sky)
 * **Tugberk GOC** - *Testing* - [GitHub Profile](https://github.com/tugberkgoc)
+* **Atakan Kaya** - *Documentation* - [Github Profile](https://github.com/Atakankaya1905)
+* **Arda Gurhan Cakmakli** - *Documentation* - [Github Profile]()
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
