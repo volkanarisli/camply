@@ -1,6 +1,6 @@
 # Camply is a fully web application that users can share their own camp sides.
 [![GitHub release](https://img.shields.io/badge/release-1.0.0-blue.svg)](https://github.com/volkanarisli/camply/releases/tag/1.0.0)
-[![Travis](https://img.shields.io/badge/bulid-passing-green.svg)](https://github.com/volkanarisli/camply)
+[![Travis](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/volkanarisli/camply)
 [![Codecov](https://img.shields.io/badge/coverage-71%25-orange.svg)](https://github.com/volkanarisli/camply)
 
 This is a camping application which everyone can share own trips.
