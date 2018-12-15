@@ -1,7 +1,7 @@
 # Camply is a fully web application that users can share their own camp sides.
-[![GitHub release](https://img.shields.io/github/release/Homebrew/brew.svg)](https://github.com/tugberkgoc/hacker-rank-tutorials/releases)
-<!--[![Travis](https://img.shields.io/travis/Homebrew/brew.svg)](https://travis-ci.org/Homebrew/brew)-->
-<!--[![Codecov](https://img.shields.io/codecov/c/github/Homebrew/brew.svg)](https://codecov.io/gh/Homebrew/brew)-->
+[![GitHub release](https://img.shields.io/badge/release-1.0.0-blue.svg)](https://github.com/volkanarisli/campy/releases)
+[![Travis](https://img.shields.io/badge/bulid-passing-green.svg)]()
+[![Codecov](https://img.shields.io/badge/coverage-71%25-orange.svg)]()
 
 This is a camping application which everyone can share own trips.
 
@@ -12,6 +12,28 @@ If you want to participate and contribute, clone the repository.
 ```
 git clone https://github.com/tugberkgoc/camply.git
 ```
+
+### Run Project
+
+```
+npm start
+```
+OR
+
+```
+node app.js
+```
+
+### Run Tests
+
+```
+npm install -g mocha
+```
+
+```
+mocha
+```
+
 ### Database Schemes
 
 ![](https://www.lucidchart.com/publicSegments/view/73f75517-40db-4c53-814b-359823931bf9/image.png)
