@@ -10,7 +10,7 @@ This is a camping application which everyone can share own trips.
 If you want to participate and contribute, clone the repository.
 
 ```
-git clone https://github.com/tugberkgoc/camply.git
+git clone https://github.com/volkanarisli/camply.git
 ```
 
 ### Run Project
