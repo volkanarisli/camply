@@ -1,0 +1,8 @@
+OUTPUT_DIRECTORY = "C:\Users\BB8\Desktop\school\camply\Docs"
+INPUT = "C:\Users\BB8\Desktop\school\camply"
+RECURSIVE = YES
+FILE_PATTERNS = *.js \ 
+*.md
+EXTENSION_MAPPING = js=Javascript
+GENERATE_LATEX = NO
+EXCLUDE_PATTERNS = */node_modules/*

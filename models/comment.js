@@ -1,6 +1,19 @@
-var mongoose = require("mongoose")
+/**
+ * Comment is model that designed for containing data.
+ *
+ * @type {*|Mongoose}
+ */
+const mongoose = require("mongoose")
 
-var commentSchema = new mongoose.Schema({
+/**
+ * Comment Schema
+ *
+ * <b>Entities:</b>
+ * text(String)
+ * author(id(ref="user"))
+ * username(String)
+ */
+const commentSchema = new mongoose.Schema({
   text: String,
   author: {
     id: {
@@ -11,4 +24,9 @@ var commentSchema = new mongoose.Schema({
   }
 })
 
+/**
+ * @type {Model}
+ *
+ * @exports commentSchema
+ */
 module.exports = mongoose.model("Comment", commentSchema)

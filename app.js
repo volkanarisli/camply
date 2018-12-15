@@ -22,12 +22,6 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 /**
- * For seed DB, use below.
- */
-//seedDB();
-
-
-/**
  * PASSPORT CONFIG
  */
 app.use(require("express-session")({

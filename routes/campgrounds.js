@@ -5,7 +5,7 @@ const middleware = require("../middleware")
 
 /**
  * GET MAPPING
- * Param : "/"
+ *
  * Show all campgrounds from getting DB.
  */
 router.get("/", function (req, res) {
@@ -20,7 +20,7 @@ router.get("/", function (req, res) {
 
 /**
  * POST MAPPING
- * Param : "/"
+ *
  * Add new campground to DB
  */
 router.post("/", middleware.isLoggedIn, function (req, res) {
@@ -37,7 +37,7 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
     if (err) {
       console.log(err)
     } else {
-      console.log(newlyCreated)
+      //console.log(newlyCreated)
       res.redirect("/campgrounds")
     }
   })
@@ -45,7 +45,7 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
 
 /**
  * GET MAPPING
- * Param : "/new"
+ *
  * Show form to create new campground
  */
 router.get("/new", middleware.isLoggedIn, function (req, res) {
@@ -54,7 +54,7 @@ router.get("/new", middleware.isLoggedIn, function (req, res) {
 
 /**
  * GET MAPPING
- * Param : "/:id"
+ *
  * Shows more info about one campground
  */
 router.get("/:id", function (req, res) {
@@ -63,12 +63,12 @@ router.get("/:id", function (req, res) {
       console.log(err)
     } else {
       if (req.isAuthenticated()) {
-        console.log(foundCampground)
+        //console.log(foundCampground)
         var usernameofUser = req.user.username
-        console.log(usernameofUser);
+        //console.log(usernameofUser);
         res.render("campgrounds/show", {campground: foundCampground, usernameofUser, usernameofUser});
       } else {
-        console.log(foundCampground)
+        //console.log(foundCampground)
         res.render("campgrounds/show", {campground: foundCampground, usernameofUser, usernameofUser});
       }
     }
@@ -77,8 +77,8 @@ router.get("/:id", function (req, res) {
 
 /**
  * GET MAPPING
- * "/:id/edit"
- * EDIT CAMPGROUND ROUTE
+ *
+ * Edit campground route
  */
 router.get("/:id/edit", middleware.checkCampgroundOwnership, function (req, res) {
   Campground.findById(req.params.id, function (err, foundCampground) {
@@ -88,8 +88,8 @@ router.get("/:id/edit", middleware.checkCampgroundOwnership, function (req, res)
 
 /**
  * PUT MAPPING
- * PARAM : "/:id"
- * UPDATE CAMPGROUND ROUTE
+ *
+ * Update campground route
  */
 router.put("/:id", middleware.checkCampgroundOwnership, function (req, res) {
   Campground.findByIdAndUpdate(req.params.id, req.body.campground, function (err) {
@@ -103,8 +103,8 @@ router.put("/:id", middleware.checkCampgroundOwnership, function (req, res) {
 
 /**
  * DELETE MAPPING
- * PARAM: "/:id"
- * DESTROY CAMPGROUND ROUTE
+ *
+ * Destroy campground route
  */
 router.delete("/:id", middleware.checkCampgroundOwnership, function (req, res) {
   Campground.findByIdAndRemove(req.params.id, function (err) {
@@ -116,4 +116,9 @@ router.delete("/:id", middleware.checkCampgroundOwnership, function (req, res) {
   })
 })
 
+/**
+ * @type {Router|router}
+ *
+ * @exports router
+ */
 module.exports = router
