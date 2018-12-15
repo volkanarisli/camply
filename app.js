@@ -13,7 +13,7 @@ const express = require("express"),
 
 require('dotenv').config()
 
-mongoose.connect("mongodb://volkan:volk0198@ds251332.mlab.com:51332/yeldcamp",{ useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs")
