@@ -1,5 +1,5 @@
 # Camply is a fully web application that users can share their own camp sides.
-[![GitHub release](https://img.shields.io/badge/release-1.0.0-blue.svg)](https://github.com/volkanarisli/campy/releases)
+[![GitHub release](https://img.shields.io/badge/release-1.0.0-blue.svg)](https://github.com/volkanarisli/camply/releases/tag/1.0.0)
 [![Travis](https://img.shields.io/badge/bulid-passing-green.svg)]()
 [![Codecov](https://img.shields.io/badge/coverage-71%25-orange.svg)]()
 
