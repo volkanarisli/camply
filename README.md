@@ -14,7 +14,7 @@ git clone https://github.com/tugberkgoc/camply.git
 ```
 ### Database Schemes
 
-![](https://www.lucidchart.com/publicSegments/view/cbd9356a-c261-43d8-b4e4-72bd199c66f8/image.png)
+![](https://www.lucidchart.com/publicSegments/view/73f75517-40db-4c53-814b-359823931bf9/image.png)
 
 ### Agile Scrum
 
