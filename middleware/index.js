@@ -1,8 +1,20 @@
-var Campground = require("../models/campground")
-var Comment = require("../models/comment")
+/**
+ * Index is a middleware to validate requests and responses.
+ *
+ * @type {Model|*}
+ */
+const Campground = require("../models/campground")
+const Comment = require("../models/comment")
 
-var middlewareObj = {}
+const middlewareObj = {}
 
+/**
+ * Checks campground ownership
+ *
+ * @param req
+ * @param res
+ * @param next
+ */
 middlewareObj.checkCampgroundOwnership = function (req, res, next) {
   if (req.isAuthenticated()) {
     Campground.findById(req.params.id, function (err, foundCampground) {
@@ -24,6 +36,14 @@ middlewareObj.checkCampgroundOwnership = function (req, res, next) {
   }
 }
 
+/**
+ * Checks comment ownership
+ *
+ * @param req
+ * @param res
+ * @param next
+ * @return next or redirect
+ */
 middlewareObj.checkCommentOwnership = function (req, res, next) {
   if (req.isAuthenticated()) {
     Comment.findById(req.params.comment_id, function (err, foundComment) {
@@ -44,6 +64,14 @@ middlewareObj.checkCommentOwnership = function (req, res, next) {
   }
 }
 
+/**
+ * Checks the user is logged in
+ *
+ * @param req
+ * @param res
+ * @param next
+ * @return {*}
+ */
 middlewareObj.isLoggedIn = function (req, res, next) {
   if (req.isAuthenticated()) {
     return next()
@@ -52,5 +80,7 @@ middlewareObj.isLoggedIn = function (req, res, next) {
   res.redirect("/login")
 }
 
-
+/**
+ * @exports middlewareObj
+ */
 module.exports = middlewareObj
