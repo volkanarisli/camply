@@ -16,6 +16,10 @@ git clone https://github.com/tugberkgoc/camply.git
 
 ![](https://www.lucidchart.com/publicSegments/view/73f75517-40db-4c53-814b-359823931bf9/image.png)
 
+### UML Diagrams
+
+![](https://www.lucidchart.com/publicSegments/view/1c86e03a-97ba-46a2-ba53-85b8b9b46745/image.png)
+
 ### Agile Scrum
 
 If you want to participate, you can take user story from our backlog. [Click here!](https://trello.com/b/XNGXBxr1/camply)
