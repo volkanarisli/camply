@@ -63,8 +63,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Volkan Arisli** - *Initial work* - [GitHub Profile](https://github.com/volkanarisli)
-* **Hanifi Enes Gul** - *Testing* - [GitHub Profile](https://github.com/r0sky)
+* **Volkan Arisli** - *Coding* - [GitHub Profile](https://github.com/volkanarisli)
+* **Hanifi Enes Gul** - *Coding and Testing* - [GitHub Profile](https://github.com/r0sky)
 * **Tugberk GOC** - *Testing* - [GitHub Profile](https://github.com/tugberkgoc)
 * **Atakan Kaya** - *Documentation* - [Github Profile](https://github.com/Atakankaya1905)
 * **Arda Gurhan Cakmakli** - *Documentation* - [Github Profile]()
