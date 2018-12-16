@@ -1,20 +1,29 @@
 /**
  * Campground is model that designed for containing data.
  *
- * @type {*|Mongoose}
+ * @class models-campground.js
+ * @type {*|NodeJS}
+ */
+
+/**
+ * Importing Mongoose Library
+ *
+ * @property mongoose
+ * @type {require}
+ * @default "mongoose"
  */
 const mongoose = require("mongoose")
 
 /**
  * Campground Schema
  *
- * <b>Entities:</b>
- * name(String)
- * price(String)
- * image(String)
- * description(String)
- * author(id(ref="user"), username(String))
- * comments(ref="Comment")
+ * @constructor campgroundSchema
+ * @param {String} name
+ * @param {String} price
+ * @param {String} image
+ * @param {String} description
+ * @param {Object} author
+ * @param {Object} comments
  */
 const campgroundSchema = new mongoose.Schema({
   name: String,

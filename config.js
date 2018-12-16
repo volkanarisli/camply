@@ -12,4 +12,4 @@ const userOptions = {
 
 doxygen.createConfig(userOptions)
 
-doxygen.run("config", '0.3.2')
+doxygen.run()

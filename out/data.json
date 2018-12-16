@@ -1,0 +1,1343 @@
+{
+    "project": {},
+    "files": {
+        "middleware\\index.js": {
+            "name": "middleware\\index.js",
+            "modules": {},
+            "classes": {
+                "middleware-index.js": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "models\\campground.js": {
+            "name": "models\\campground.js",
+            "modules": {},
+            "classes": {
+                "models-campground.js": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "models\\comment.js": {
+            "name": "models\\comment.js",
+            "modules": {},
+            "classes": {
+                "models-comment.js": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "models\\user.js": {
+            "name": "models\\user.js",
+            "modules": {},
+            "classes": {
+                "models-user.js": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "routes\\campgrounds.js": {
+            "name": "routes\\campgrounds.js",
+            "modules": {},
+            "classes": {
+                "routes-campground.js": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "routes\\comments.js": {
+            "name": "routes\\comments.js",
+            "modules": {},
+            "classes": {
+                "routes-comment.js": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "routes\\index.js": {
+            "name": "routes\\index.js",
+            "modules": {},
+            "classes": {
+                "routes-index.js": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "app.js": {
+            "name": "app.js",
+            "modules": {},
+            "classes": {
+                "index.js": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "middleware-index.js": {
+            "name": "middleware-index.js",
+            "shortname": "middleware-index.js",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "middleware\\index.js",
+            "line": 1,
+            "description": "Index is a middleware to validate requests and responses.",
+            "type": "{*|NodeJS}"
+        },
+        "models-campground.js": {
+            "name": "models-campground.js",
+            "shortname": "models-campground.js",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "models\\campground.js",
+            "line": 1,
+            "description": "Campground is model that designed for containing data.",
+            "type": "{*|NodeJS}"
+        },
+        "models-comment.js": {
+            "name": "models-comment.js",
+            "shortname": "models-comment.js",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "models\\comment.js",
+            "line": 1,
+            "description": "Comment is model that designed for containing data.",
+            "type": "{*|NodeJS}"
+        },
+        "models-user.js": {
+            "name": "models-user.js",
+            "shortname": "models-user.js",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "models\\user.js",
+            "line": 1,
+            "description": "User is model that designed for containing data.",
+            "type": "{*|NodeJS}"
+        },
+        "routes-campground.js": {
+            "name": "routes-campground.js",
+            "shortname": "routes-campground.js",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "routes\\campgrounds.js",
+            "line": 1,
+            "description": "Campground is a router that contains restful services.",
+            "type": "{*|NodeJS}"
+        },
+        "routes-comment.js": {
+            "name": "routes-comment.js",
+            "shortname": "routes-comment.js",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "routes\\comments.js",
+            "line": 1,
+            "description": "Comment is a router that contains restful services.",
+            "type": "{*|NodeJS}"
+        },
+        "routes-index.js": {
+            "name": "routes-index.js",
+            "shortname": "routes-index.js",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "routes\\index.js",
+            "line": 1,
+            "description": "Index is a main route.",
+            "extends": "express, router, passport, User, Campground",
+            "type": "{*|NodeJS}"
+        },
+        "index.js": {
+            "name": "index.js",
+            "shortname": "index.js",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "app.js",
+            "line": 1,
+            "description": "Index is a main route.",
+            "extends": "express, app, bodyParser, mongoose, flash, passport, LocalStrategy, methodOverride, User, commentRoutes,\ncampgroundRoutes, indexRoutes",
+            "type": "{*|NodeJS}"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "middleware\\index.js",
+            "line": 8,
+            "description": "Importing Campground Model",
+            "itemtype": "property",
+            "name": "Campground",
+            "type": "{require}",
+            "default": "\"../models/campground\"",
+            "class": "middleware-index.js"
+        },
+        {
+            "file": "middleware\\index.js",
+            "line": 17,
+            "description": "Importing Comment Model",
+            "itemtype": "property",
+            "name": "Campground",
+            "type": "{require}",
+            "default": "\"../models/comment\"",
+            "class": "middleware-index.js"
+        },
+        {
+            "file": "middleware\\index.js",
+            "line": 26,
+            "description": "It stores middleware objects.",
+            "itemtype": "property",
+            "name": "middlewareObj",
+            "type": "{Object}",
+            "default": "\"\"",
+            "class": "middleware-index.js"
+        },
+        {
+            "file": "middleware\\index.js",
+            "line": 35,
+            "description": "Checks campground ownership",
+            "itemtype": "method",
+            "name": "checkCampgroundOwnership",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "middleware-index.js"
+        },
+        {
+            "file": "middleware\\index.js",
+            "line": 64,
+            "description": "Checks comment ownership",
+            "itemtype": "method",
+            "name": "checkCampgroundOwnership",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "middleware-index.js"
+        },
+        {
+            "file": "middleware\\index.js",
+            "line": 92,
+            "description": "Checks the user is logged in",
+            "itemtype": "method",
+            "name": "checkCampgroundOwnership",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "middleware-index.js"
+        },
+        {
+            "file": "middleware\\index.js",
+            "line": 108,
+            "exports": "middlewareObj",
+            "class": "middleware-index.js"
+        },
+        {
+            "file": "models\\campground.js",
+            "line": 8,
+            "description": "Importing Mongoose Library",
+            "itemtype": "property",
+            "name": "mongoose",
+            "type": "{require}",
+            "default": "\"mongoose\"",
+            "class": "models-campground.js"
+        },
+        {
+            "file": "models\\campground.js",
+            "line": 17,
+            "description": "Campground Schema",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "price",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "description",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "author",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "comments",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "models-campground.js"
+        },
+        {
+            "file": "models\\campground.js",
+            "line": 48,
+            "type": "{Model}",
+            "exports": "campgroundSchema",
+            "class": "models-campground.js"
+        },
+        {
+            "file": "models\\comment.js",
+            "line": 8,
+            "description": "Importing Mongoose Library",
+            "itemtype": "property",
+            "name": "mongoose",
+            "type": "{require}",
+            "default": "\"mongoose\"",
+            "class": "models-comment.js"
+        },
+        {
+            "file": "models\\comment.js",
+            "line": 17,
+            "description": "Comment Schema",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "text",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "author",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "models-comment.js"
+        },
+        {
+            "file": "models\\comment.js",
+            "line": 36,
+            "type": "{Model}",
+            "exports": "commentSchema",
+            "class": "models-comment.js"
+        },
+        {
+            "file": "models\\user.js",
+            "line": 8,
+            "description": "Importing Mongoose Library",
+            "itemtype": "property",
+            "name": "mongoose",
+            "type": "{require}",
+            "default": "\"mongoose\"",
+            "class": "models-user.js"
+        },
+        {
+            "file": "models\\user.js",
+            "line": 17,
+            "description": "Importing Passport Local Mongoose Library",
+            "itemtype": "property",
+            "name": "passportLocalMongoose",
+            "type": "{require}",
+            "default": "\"passport-local-mongoose\"",
+            "class": "models-user.js"
+        },
+        {
+            "file": "models\\user.js",
+            "line": 26,
+            "description": "User Schema",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "username",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "password",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "models-user.js"
+        },
+        {
+            "file": "models\\user.js",
+            "line": 40,
+            "type": "{Model}",
+            "exports": "UserSchema",
+            "class": "models-user.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 8,
+            "description": "Importing Express Library",
+            "itemtype": "property",
+            "name": "express",
+            "type": "{Object}",
+            "default": "\"express\"",
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 17,
+            "description": "Importing Router Library",
+            "itemtype": "property",
+            "name": "router",
+            "type": "{Object}",
+            "default": "\"express.Router()\"",
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 26,
+            "description": "Importing Campground Class",
+            "itemtype": "property",
+            "name": "Campground",
+            "type": "{Object}",
+            "default": "\"../models/campground\"",
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 35,
+            "description": "Importing Middleware Class",
+            "itemtype": "property",
+            "name": "Middleware",
+            "type": "{Object}",
+            "default": "\"../middleware\"",
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 44,
+            "description": "GET MAPPING: Show all campgrounds from getting DB.",
+            "itemtype": "method",
+            "name": "router.get(\"/\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 61,
+            "description": "POST MAPPING: Add new campground to DB",
+            "itemtype": "method",
+            "name": "router.post(\"/\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 88,
+            "description": "GET MAPPING: Show form to create new campground",
+            "itemtype": "method",
+            "name": "router.get(\"/new\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 99,
+            "description": "GET MAPPING: Shows more info about one campground",
+            "itemtype": "method",
+            "name": "router.get(\"/:id\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 124,
+            "description": "GET MAPPING: Edit campground route",
+            "itemtype": "method",
+            "name": "router.get(\"/:id/edit\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 137,
+            "description": "PUT MAPPING: Update campground route",
+            "itemtype": "method",
+            "name": "router.put(\"/:id\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 154,
+            "description": "DELETE MAPPING: Destroy campground route",
+            "itemtype": "method",
+            "name": "router.delete(\"/:id\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\campgrounds.js",
+            "line": 171,
+            "type": "{Router|router}",
+            "exports": "router",
+            "class": "routes-campground.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 8,
+            "description": "Importing Express Library",
+            "itemtype": "property",
+            "name": "express",
+            "type": "{Object}",
+            "default": "\"express\"",
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 17,
+            "description": "Importing Router Library",
+            "itemtype": "property",
+            "name": "router",
+            "type": "{Object}",
+            "default": "\"express.Router()\"",
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 26,
+            "description": "Importing Campground Class",
+            "itemtype": "property",
+            "name": "Campground",
+            "type": "{Object}",
+            "default": "\"../models/campground\"",
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 35,
+            "description": "Importing Comment Class",
+            "itemtype": "property",
+            "name": "Comment",
+            "type": "{Object}",
+            "default": "\"../models/comment\"",
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 44,
+            "description": "Importing Middleware Class",
+            "itemtype": "property",
+            "name": "Middleware",
+            "type": "{Object}",
+            "default": "\"../middleware\"",
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 53,
+            "description": "GET MAPPING: To check from id to give login permission to user.",
+            "itemtype": "method",
+            "name": "router.get(\"/new\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 71,
+            "description": "POST MAPPING: Looks up campground using ID, then creates comments.",
+            "itemtype": "method",
+            "name": "router.post(\"/\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 103,
+            "description": "GET MAPPING: Checks comment ownership, then comments edit route.",
+            "itemtype": "method",
+            "name": "router.get(\"/:comment_id/edit\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 120,
+            "description": "PUT MAPPING: Checks comment ownership, then updates comment.",
+            "itemtype": "method",
+            "name": "router.put(\"/:comment_id/edit\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 137,
+            "description": "DELETE MAPPING: Checks comment ownership, then destroys comment route.",
+            "itemtype": "method",
+            "name": "router.delete(\"/:comment_id\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\comments.js",
+            "line": 155,
+            "type": "{Router|router}",
+            "exports": "router",
+            "class": "routes-comment.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 9,
+            "description": "Importing Express Library",
+            "itemtype": "property",
+            "name": "express",
+            "type": "{Object}",
+            "default": "\"express\"",
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 18,
+            "description": "Importing Router Library",
+            "itemtype": "property",
+            "name": "router",
+            "type": "{Object}",
+            "default": "\"express.Router()\"",
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 27,
+            "description": "Importing Passport Library",
+            "itemtype": "property",
+            "name": "passport",
+            "type": "{Object}",
+            "default": "\"passport\"",
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 36,
+            "description": "Importing User Class",
+            "itemtype": "property",
+            "name": "User",
+            "type": "{Object}",
+            "default": "\"../models/user\"",
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 45,
+            "description": "Importing Campground Class",
+            "itemtype": "property",
+            "name": "Campground",
+            "type": "{Object}",
+            "default": "\"../models/campground\"",
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 54,
+            "description": "GET MAPPING: Rooting main route.",
+            "itemtype": "method",
+            "name": "router.get(\"/\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 71,
+            "description": "GET MAPPING: Routes to register form.",
+            "itemtype": "method",
+            "name": "router.get(\"/register\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 82,
+            "description": "POST MAPPING: Routes for register as a success or failure.",
+            "itemtype": "method",
+            "name": "router.post(\"/register\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 104,
+            "description": "GET MAPPING: Shows login form to user.",
+            "itemtype": "method",
+            "name": "router.get(\"/login\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 115,
+            "description": "POST MAPPING: Routes for authentication to validate login logic.",
+            "itemtype": "method",
+            "name": "router.post(\"/login\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 128,
+            "description": "GET MAPPING: Routes for logout.",
+            "itemtype": "method",
+            "name": "router.get(\"/logout\")",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "routes-index.js"
+        },
+        {
+            "file": "routes\\index.js",
+            "line": 141,
+            "exports": "router",
+            "class": "routes-index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 22,
+            "description": "Importing Dotenv Library",
+            "itemtype": "property",
+            "name": "dotenv",
+            "type": "{Object}",
+            "default": "\"dotenv\"",
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 31,
+            "description": "Connect Database",
+            "itemtype": "method",
+            "name": "mongoose.connect",
+            "params": [
+                {
+                    "name": "DATABASEURL",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "useNewUrlParser",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 40,
+            "description": "Parsing Body",
+            "itemtype": "method",
+            "name": "app.set",
+            "params": [
+                {
+                    "name": "bodyParser.urlencoded",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 48,
+            "description": "Sets view engine",
+            "itemtype": "method",
+            "name": "app.set",
+            "params": [
+                {
+                    "name": "view",
+                    "description": "engine",
+                    "type": "String"
+                },
+                {
+                    "name": "ejs",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 57,
+            "description": "Uses express",
+            "itemtype": "method",
+            "name": "app.set",
+            "params": [
+                {
+                    "name": "express.static",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 65,
+            "description": "Overrides method",
+            "itemtype": "method",
+            "name": "app.set",
+            "params": [
+                {
+                    "name": "methodOverride",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 73,
+            "description": "Uses flash",
+            "itemtype": "method",
+            "name": "app.set",
+            "params": [
+                {
+                    "name": "flash",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 81,
+            "description": "Uses express session",
+            "itemtype": "method",
+            "name": "app.set",
+            "params": [
+                {
+                    "name": "secret",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "resave",
+                    "description": "",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "saveUninitialized",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 96,
+            "description": "Initializes Passport",
+            "itemtype": "method",
+            "name": "app.set",
+            "params": [
+                {
+                    "name": "passport.initialize",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 104,
+            "description": "Creates Passport Session",
+            "itemtype": "method",
+            "name": "app.set",
+            "params": [
+                {
+                    "name": "passport.session",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 112,
+            "description": "Add Local Strategy to Passport",
+            "itemtype": "method",
+            "name": "passport.use",
+            "params": [
+                {
+                    "name": "LocalStrategy",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 120,
+            "description": "Serializes User",
+            "itemtype": "method",
+            "name": "passport.serializeUser",
+            "params": [
+                {
+                    "name": "User.serializeUser",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 128,
+            "description": "Deserializes User",
+            "itemtype": "method",
+            "name": "passport.deserializeUser",
+            "params": [
+                {
+                    "name": "User.deserializeUser",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 136,
+            "description": "Routes",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "req",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "res",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "next",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 151,
+            "description": "Imports comment routes",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "commentRoutes",
+                    "description": "",
+                    "type": "Class"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 160,
+            "description": "Imports campground routes",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "campgroundRoutes",
+                    "description": "",
+                    "type": "Class"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 169,
+            "description": "Imports index routes",
+            "itemtype": "method",
+            "name": "app.use",
+            "params": [
+                {
+                    "name": "path",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "indexRoutes",
+                    "description": "",
+                    "type": "Class"
+                }
+            ],
+            "class": "index.js"
+        },
+        {
+            "file": "app.js",
+            "line": 178,
+            "description": "Listens port.",
+            "itemtype": "method",
+            "name": "app.listen",
+            "params": [
+                {
+                    "name": "PORT",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "index.js"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: exports",
+            "line": " middleware\\index.js:108"
+        },
+        {
+            "message": "unknown tag: exports",
+            "line": " models\\campground.js:48"
+        },
+        {
+            "message": "unknown tag: exports",
+            "line": " models\\comment.js:36"
+        },
+        {
+            "message": "unknown tag: exports",
+            "line": " models\\user.js:40"
+        },
+        {
+            "message": "unknown tag: exports",
+            "line": " routes\\campgrounds.js:171"
+        },
+        {
+            "message": "unknown tag: exports",
+            "line": " routes\\comments.js:155"
+        },
+        {
+            "message": "unknown tag: exports",
+            "line": " routes\\index.js:141"
+        },
+        {
+            "message": "Missing item type",
+            "line": " middleware\\index.js:108"
+        },
+        {
+            "message": "Missing item type\nCampground Schema",
+            "line": " models\\campground.js:17"
+        },
+        {
+            "message": "Missing item type",
+            "line": " models\\campground.js:48"
+        },
+        {
+            "message": "Missing item type\nComment Schema",
+            "line": " models\\comment.js:17"
+        },
+        {
+            "message": "Missing item type",
+            "line": " models\\comment.js:36"
+        },
+        {
+            "message": "Missing item type\nUser Schema",
+            "line": " models\\user.js:26"
+        },
+        {
+            "message": "Missing item type",
+            "line": " models\\user.js:40"
+        },
+        {
+            "message": "Missing item type",
+            "line": " routes\\campgrounds.js:171"
+        },
+        {
+            "message": "Missing item type",
+            "line": " routes\\comments.js:155"
+        },
+        {
+            "message": "Missing item type",
+            "line": " routes\\index.js:141"
+        }
+    ]
+}

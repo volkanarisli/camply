@@ -1,13 +1,61 @@
-var express = require("express");
-var router = express.Router({mergeParams: true});
-var Campground = require("../models/campground");
-var Comment = require("../models/comment");
-var middleware = require("../middleware");
+/**
+ * Comment is a router that contains restful services.
+ *
+ * @class routes-comment.js
+ * @type {*|NodeJS}
+ */
 
 /**
- * GET MAPPING
+ * Importing Express Library
  *
- * To check from id to give login permission to user.
+ * @property express
+ * @type {Object}
+ * @default "express"
+ */
+const express = require("express");
+
+/**
+ * Importing Router Library
+ *
+ * @property router
+ * @type {Object}
+ * @default "express.Router()"
+ */
+const router = express.Router({mergeParams: true});
+
+/**
+ * Importing Campground Class
+ *
+ * @property Campground
+ * @type {Object}
+ * @default "../models/campground"
+ */
+const Campground = require("../models/campground");
+
+/**
+ * Importing Comment Class
+ *
+ * @property Comment
+ * @type {Object}
+ * @default "../models/comment"
+ */
+const Comment = require("../models/comment");
+
+/**
+ * Importing Middleware Class
+ *
+ * @property Middleware
+ * @type {Object}
+ * @default "../middleware"
+ */
+const middleware = require("../middleware");
+
+/**
+ * GET MAPPING: To check from id to give login permission to user.
+ *
+ * @method router.get("/new")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.get("/new", middleware.isLoggedIn, function (req, res) {
   //console.log(req.params.id);
@@ -15,20 +63,22 @@ router.get("/new", middleware.isLoggedIn, function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render("comments/new", {campground: campground});
+      res.render("comments/new", {campground: campground})
     }
   })
-});
+})
 
 /**
- * POST MAPPING
+ * POST MAPPING: Looks up campground using ID, then creates comments.
  *
- * Looks up campround using ID, then creates comments.
+ * @method router.post("/")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.post("/", middleware.isLoggedIn, function (req, res) {
   Campground.findById(req.params.id, function (err, campground) {
     if (err) {
-      console.log(err);
+      console.log(err)
       res.redirect("/campgrounds")
     } else {
       Comment.create(req.body.comment, function (err, comment) {
@@ -51,9 +101,11 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
 })
 
 /**
- * GET MAPPING
+ * GET MAPPING: Checks comment ownership, then comments edit route.
  *
- * Checks comment ownership, then comments edit route.
+ * @method router.get("/:comment_id/edit")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, function (req, res) {
   Comment.findById(req.params.comment_id, function (err, foundComment) {
@@ -66,9 +118,11 @@ router.get("/:comment_id/edit", middleware.checkCommentOwnership, function (req,
 })
 
 /**
- * PUT MAPPING
+ * PUT MAPPING: Checks comment ownership, then updates comment.
  *
- * Checks comment ownership, then updates comment.
+ * @method router.put("/:comment_id/edit")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.put("/:comment_id", middleware.checkCommentOwnership, function (req, res) {
   Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function (err, updatedComment) {
@@ -81,9 +135,11 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function (req, res)
 })
 
 /**
- * DELETE MAPPING
+ * DELETE MAPPING: Checks comment ownership, then destroys comment route.
  *
- * Checks comment ownership, then destroys comment route.
+ * @method router.delete("/:comment_id")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.delete("/:comment_id", middleware.checkCommentOwnership, function (req, res) {
   Comment.findByIdAndRemove(req.params.comment_id, function (err) {

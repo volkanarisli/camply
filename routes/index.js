@@ -1,19 +1,62 @@
 /**
  * Index is a main route.
  *
+ * @class routes-index.js
  * @extends express, router, passport, User, Campground
- * @type {createApplication}
+ * @type {*|NodeJS}
+ */
+
+/**
+ * Importing Express Library
+ *
+ * @property express
+ * @type {Object}
+ * @default "express"
  */
 const express = require("express")
+
+/**
+ * Importing Router Library
+ *
+ * @property router
+ * @type {Object}
+ * @default "express.Router()"
+ */
 const router = express.Router()
+
+/**
+ * Importing Passport Library
+ *
+ * @property passport
+ * @type {Object}
+ * @default "passport"
+ */
 const passport = require("passport")
+
+/**
+ * Importing User Class
+ *
+ * @property User
+ * @type {Object}
+ * @default "../models/user"
+ */
 const User = require("../models/user")
+
+/**
+ * Importing Campground Class
+ *
+ * @property Campground
+ * @type {Object}
+ * @default "../models/campground"
+ */
 const Campground = require("../models/campground")
 
 /**
- * GET MAPPING
+ * GET MAPPING: Rooting main route.
  *
- * Rooting main route.
+ * @method router.get("/")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.get("/", function (req, res) {
   Campground.find({}, function (err, allCampgrounds) {
@@ -26,21 +69,25 @@ router.get("/", function (req, res) {
 })
 
 /**
- * GET MAPPING
+ * GET MAPPING: Routes to register form.
  *
- * Routes to register form.
+ * @method router.get("/register")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.get("/register", function (req, res) {
   res.render("register")
-});
+})
 
 /**
- * POST MAPPING
+ * POST MAPPING: Routes for register as a success or failure.
  *
- * Routes for register as a success or failure.
+ * @method router.post("/register")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.post("/register", function (req, res) {
-  var newUser = new User({username: req.body.username})
+  const newUser = new User({username: req.body.username})
   User.register(newUser, req.body.password, function (err, user) {
     if (err) {
       req.flash("error", err.message)
@@ -55,18 +102,22 @@ router.post("/register", function (req, res) {
 })
 
 /**
- * GET MAPPING
+ * GET MAPPING: Shows login form to user.
  *
- * Shows login form to user.
+ * @method router.get("/login")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.get("/login", function (req, res) {
   res.render("login")
 })
 
 /**
- * POST MAPPING
+ * POST MAPPING: Routes for authentication to validate login logic.
  *
- * Routes for authentication to validate login logic.
+ * @method router.post("/login")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.post("/login", passport.authenticate("local", {
     successRedirect: "/campgrounds",
@@ -75,9 +126,11 @@ router.post("/login", passport.authenticate("local", {
 })
 
 /**
- * GET MAPPING
+ * GET MAPPING: Routes for logout.
  *
- * Routes for logour.
+ * @method router.get("/logout")
+ * @param {Object} req
+ * @param {Object} res
  */
 router.get("/logout", function (req, res) {
   req.logout()

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>routes\index.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/index.js.html">index.js</a></li>
+                                <li><a href="../classes/middleware-index.js.html">middleware-index.js</a></li>
+                                <li><a href="../classes/models-campground.js.html">models-campground.js</a></li>
+                                <li><a href="../classes/models-comment.js.html">models-comment.js</a></li>
+                                <li><a href="../classes/models-user.js.html">models-user.js</a></li>
+                                <li><a href="../classes/routes-campground.js.html">routes-campground.js</a></li>
+                                <li><a href="../classes/routes-comment.js.html">routes-comment.js</a></li>
+                                <li><a href="../classes/routes-index.js.html">routes-index.js</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: routes\index.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * Index is a main route.
+ *
+ * @class routes-index.js
+ * @extends express, router, passport, User, Campground
+ * @type {*|NodeJS}
+ */
+
+/**
+ * Importing Express Library
+ *
+ * @property express
+ * @type {Object}
+ * @default &quot;express&quot;
+ */
+const express = require(&quot;express&quot;)
+
+/**
+ * Importing Router Library
+ *
+ * @property router
+ * @type {Object}
+ * @default &quot;express.Router()&quot;
+ */
+const router = express.Router()
+
+/**
+ * Importing Passport Library
+ *
+ * @property passport
+ * @type {Object}
+ * @default &quot;passport&quot;
+ */
+const passport = require(&quot;passport&quot;)
+
+/**
+ * Importing User Class
+ *
+ * @property User
+ * @type {Object}
+ * @default &quot;../models/user&quot;
+ */
+const User = require(&quot;../models/user&quot;)
+
+/**
+ * Importing Campground Class
+ *
+ * @property Campground
+ * @type {Object}
+ * @default &quot;../models/campground&quot;
+ */
+const Campground = require(&quot;../models/campground&quot;)
+
+/**
+ * GET MAPPING: Rooting main route.
+ *
+ * @method router.get(&quot;/&quot;)
+ * @param {Object} req
+ * @param {Object} res
+ */
+router.get(&quot;/&quot;, function (req, res) {
+  Campground.find({}, function (err, allCampgrounds) {
+    if (err) {
+      console.log(err)
+    } else {
+      res.render(&quot;campgrounds/index&quot;, {campgrounds: allCampgrounds})
+    }
+  })
+})
+
+/**
+ * GET MAPPING: Routes to register form.
+ *
+ * @method router.get(&quot;/register&quot;)
+ * @param {Object} req
+ * @param {Object} res
+ */
+router.get(&quot;/register&quot;, function (req, res) {
+  res.render(&quot;register&quot;)
+})
+
+/**
+ * POST MAPPING: Routes for register as a success or failure.
+ *
+ * @method router.post(&quot;/register&quot;)
+ * @param {Object} req
+ * @param {Object} res
+ */
+router.post(&quot;/register&quot;, function (req, res) {
+  const newUser = new User({username: req.body.username})
+  User.register(newUser, req.body.password, function (err, user) {
+    if (err) {
+      req.flash(&quot;error&quot;, err.message)
+      return res.render(&quot;register&quot;)
+    } else {
+      passport.authenticate(&quot;local&quot;)(req, res, function () {
+        req.flash(&quot;success&quot;, &quot;Welcome to YeldCamp&quot; + user.username)
+        res.redirect(&quot;/campgrounds&quot;)
+      })
+    }
+  })
+})
+
+/**
+ * GET MAPPING: Shows login form to user.
+ *
+ * @method router.get(&quot;/login&quot;)
+ * @param {Object} req
+ * @param {Object} res
+ */
+router.get(&quot;/login&quot;, function (req, res) {
+  res.render(&quot;login&quot;)
+})
+
+/**
+ * POST MAPPING: Routes for authentication to validate login logic.
+ *
+ * @method router.post(&quot;/login&quot;)
+ * @param {Object} req
+ * @param {Object} res
+ */
+router.post(&quot;/login&quot;, passport.authenticate(&quot;local&quot;, {
+    successRedirect: &quot;/campgrounds&quot;,
+    failueRedirect: &quot;/login&quot;
+  }), function (req, res) {
+})
+
+/**
+ * GET MAPPING: Routes for logout.
+ *
+ * @method router.get(&quot;/logout&quot;)
+ * @param {Object} req
+ * @param {Object} res
+ */
+router.get(&quot;/logout&quot;, function (req, res) {
+  req.logout()
+  req.flash(&quot;success&quot;, &quot;Logged you out&quot;)
+  res.redirect(&quot;/campgrounds&quot;)
+})
+
+/**
+ * @exports router
+ */
+module.exports = router
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,17 +1,26 @@
 /**
  * Comment is model that designed for containing data.
  *
- * @type {*|Mongoose}
+ * @class models-comment.js
+ * @type {*|NodeJS}
+ */
+
+/**
+ * Importing Mongoose Library
+ *
+ * @property mongoose
+ * @type {require}
+ * @default "mongoose"
  */
 const mongoose = require("mongoose")
 
 /**
  * Comment Schema
  *
- * <b>Entities:</b>
- * text(String)
- * author(id(ref="user"))
- * username(String)
+ * @constructor commentSchema
+ * @param {String} text
+ * @param {Object} author
+ * @param {String} username
  */
 const commentSchema = new mongoose.Schema({
   text: String,
