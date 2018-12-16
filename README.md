@@ -37,6 +37,13 @@ npm install -g mocha
 mocha
 ```
 
+### Documentation
+
+If you want to see documentation. Please, follow these steps.
+
+* In camply files, open out/ directory
+* Then, click index.html
+
 ### Database Schemes
 
 ![](https://www.lucidchart.com/publicSegments/view/c20aa7f4-baf8-4d13-b074-744927e0ac35/image.png)
