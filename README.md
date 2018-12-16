@@ -26,12 +26,12 @@ node app.js
 
 ### Run Tests
 
-First
+* First
 
 ```
 npm install -g mocha
 ```
-Second
+* Second
 
 ```
 mocha
